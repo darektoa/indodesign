@@ -1,0 +1,169 @@
+header{
+  --header-height: 7rem;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
+  z-index: 200;
+}
+
+header > .container{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/*
+  BRAND BOX
+*/
+header .brand-box{
+  width: auto;
+
+}
+
+header .brand-box > img{
+  width: 20rem;
+  max-height: 5rem;
+}
+
+
+
+/*
+  NAV
+*/
+header nav{
+  width: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* MENU ICON */
+header .menu-icon{
+  display: none;
+}
+
+header .menu-icon,
+header .menu-icon::before,
+header .menu-icon::after{
+  width: 3rem;
+  height: .4rem;
+  position: relative;
+  background-color: #343434;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+header .menu-icon::before{
+  content: "";
+  position: absolute;
+  top: -.8rem;
+}
+
+header .menu-icon::after{
+  content: "";
+  position: absolute;
+  bottom: -.8rem;
+}
+
+header nav > ul{
+  display: flex;
+}
+
+header nav > ul > li{
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  list-style: none;
+}
+
+header nav > ul > li:first-child{
+  margin: unset;
+}
+
+header nav > ul > li > a{
+  font-size: var(--small);
+  text-decoration: none;
+}
+
+header nav > ul > li > a:hover + span{
+  width: 50%;
+  opacity: 1;
+}
+
+header nav > ul > li > span{
+  width: 0;
+  height: .4rem;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--main-accent-color);
+  border-radius: 1rem;
+  opacity: 0;
+  transition: all .3s;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  /* MENU ICON */
+  header .menu-icon{
+    display: block;
+  }
+
+  header .menu-icon:hover + nav,
+  header nav:hover{
+    top: var(--header-height);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /*
+    NAV
+  */
+  header nav{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: calc(var(--header-height) - 4rem);
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-out;
+    z-index: 100;
+  }
+
+  header nav > ul{
+    width: 100vw;
+    height: auto;
+    max-height: 70vh;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    overflow: auto;
+  }
+
+  header nav > ul > li{
+    width: auto;
+    margin: 0;
+    margin-top: 2.5rem;
+  }
+
+  header nav > ul > li:last-child,
+  header nav > ul > li:last-child > a{
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav > ul > li > span{
+    bottom: -.8rem;
+  }
+}

@@ -1,0 +1,109 @@
+#about-us{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-us > .container{
+  padding: 7rem var(--container);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/*
+  TEXT BOX
+*/
+#about-us .text-box{
+  width: 75%;
+  max-width: 80rem;
+  margin-right: 3rem;
+  flex-shrink: 0;
+}
+
+#about-us .text-box > h2{
+  margin-bottom: 3rem;
+  color: var(--main-accent-color);
+  font-size: var(--x-large);
+  font-weight: 400;
+}
+
+#about-us .text-box > p{
+  font-size: var(--medium);
+  line-height: 3rem;
+}
+
+
+/*
+  IMAGE BOX
+*/
+#about-us .image-box{
+  width: auto;
+  flex-grow: 1;
+}
+
+#about-us .image-box > img{
+  width: 20rem;
+}
+
+
+/*
+  BACKGROUND LOGO
+*/
+#about-us .bg-logo{
+  width: 60rem;
+  height: 60rem;
+  opacity: 5%;
+  position: absolute;
+  top: -25rem;
+  right: -15rem;
+  background-image: url('../../assets/images/logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@media screen and (max-width: 800px) {
+  /*
+    TEXT BOX
+  */
+  #about-us .text-box{
+    width: 100%;
+    max-width: unset;
+    margin-right: unset;
+  }
+
+
+  /*
+    IMAGE BOX
+  */
+  #about-us .image-box{
+    display: none;
+  }
+
+  /*
+    BACKGROUND LOGO
+  */
+  #about-us .bg-logo{
+    width: 50rem;
+    height: 50rem;
+  }
+}
+
+
+
+@media screen and (max-width: 400px){
+  /*
+    BACKGROUND LOGO
+  */
+  #about-us .bg-logo{
+    width: 25rem;
+    height: 25rem;
+    top: -10rem;
+    right: -10rem;
+  }
+}

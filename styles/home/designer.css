@@ -209,4 +209,23 @@
   #designer .text-box > a{
     font-size: var(--small);
   }
+
+  /*
+    CARD
+  */
+  #designer .card-box > .card{
+    padding-top: 140%;
+  }
+
+  #designer .card-box > .card > img{
+    height: 55%;
+  }
+
+  #designer .card-box > .card > .text-box{
+    top: 55%;
+  }
+
+  #designer .card-box > .card > .text-box > .role{
+    margin-bottom: 1rem;
+  }
 }

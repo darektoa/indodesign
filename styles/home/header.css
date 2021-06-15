@@ -45,7 +45,17 @@ header nav{
   position: relative;
 }
 
-/* MENU ICON */
+/* MENU CHECK & MENU ICON */
+header .menu-check{
+  width: 3rem;
+  height: 2rem;
+  position: absolute;
+  right: var(--container);
+  background-color: #FFF;
+  filter: opacity(0);
+  z-index: 2;
+}
+
 header .menu-icon{
   display: none;
 }
@@ -60,6 +70,7 @@ header .menu-icon::after{
   background-color: #343434;
   border-radius: 1rem;
   cursor: pointer;
+  transition: transform .3s ease-out;
 }
 
 header .menu-icon::before{
@@ -72,15 +83,6 @@ header .menu-icon::after{
   content: "";
   position: absolute;
   bottom: 0;
-}
-
-header .menu-icon + input[type="checkbox"]{
-  width: 3rem;
-  height: 2rem;
-  position: absolute;
-  right: var(--container);
-  background-color: #FFF;
-  filter: opacity(0);
 }
 
 header nav > ul{
@@ -124,16 +126,32 @@ header nav > ul > li > span{
 
 
 @media screen and (max-width: 800px) {
-  /* MENU ICON */
-  header .menu-icon{
-    display: block;
-  }
-
-  header .menu-icon + input[type="checkbox"]:checked ~ nav{
+  /* MENU CHECK & MENU ICON */
+  header .menu-check:checked ~ nav{
     top: var(--header-height);
     visibility: visible;
     opacity: 1;
   }
+
+  header .menu-check:checked ~ .menu-icon{
+    transform: rotate(180deg);
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  header .menu-check:checked ~ .menu-icon::before{
+    top: -.8rem;
+    transform: rotate(45deg);
+  }
+
+  header .menu-check:checked ~ .menu-icon::after{
+    top: -.8rem;
+    transform: rotate(-45deg);
+  }
+
+  header .menu-icon{
+    display: block;
+  }
+
 
   /*
     NAV
@@ -153,7 +171,7 @@ header nav > ul > li > span{
   header nav > ul{
     width: 100vw;
     height: auto;
-    max-height: 70vh;
+    max-height: calc(100vh - var(--header-height));
     padding: 2rem;
     flex-direction: column;
     align-items: center;

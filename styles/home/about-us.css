@@ -57,7 +57,7 @@
 #about-us .bg-logo{
   width: 60rem;
   height: 60rem;
-  opacity: 5%;
+  filter: opacity(5%);
   position: absolute;
   top: -25rem;
   right: -15rem;

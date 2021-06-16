@@ -96,8 +96,6 @@
 
 #contact .contact-info > p{
   width: 100%;
-  height: auto;
-  max-height: 22rem;
   margin-bottom: 2rem;
   font-size: var(--medium);
   line-height: 3rem;
@@ -151,10 +149,6 @@
     width: 100%;
     margin-bottom: 7rem;
     border-radius: 1rem;
-  }
-
-  #contact .contact-info > p{
-    max-height: unset;
   }
 }
 

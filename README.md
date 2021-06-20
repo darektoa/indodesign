@@ -6,7 +6,7 @@
 
 ## How to install
 1. Open your terminal
-2. Type `git clone --branch main https://github.com/darektoa ./indodesign`
+2. Type `git clone --branch main https://github.com/darektoa/indodesign ./indodesign`
 3. Wait until finished
 4. Then, type `cd indodesign`
 
